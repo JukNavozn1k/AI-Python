@@ -1,8 +1,13 @@
 
 import tkinter as tk
-
+import img_handlers
 
 canvas = None
+model = None
+label = None 
+
+
+import numpy as np 
 
 # Функция для рисования 
 def paint(event):
@@ -19,3 +24,10 @@ def erase(event):
 
 def clear_canvas():
     canvas.delete("all")
+
+def predict():
+   arr = 1 -  img_handlers.toNumpy()[:, :, 0:1] 
+   ans = model.model.predict([arr.tolist()],verbose=False)
+   print()
+   label.config(text=f"Я думаю, что это: {np.argmax(ans)}")
+   pass
