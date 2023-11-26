@@ -26,8 +26,7 @@ def clear_canvas():
     canvas.delete("all")
 
 def predict():
-   arr = 1 -  img_handlers.toNumpy()[:, :, 0:1] 
+   arr = 1 -  img_handlers.toNumpy()
    ans = model.model.predict([arr.tolist()],verbose=False)
-   print()
    label.config(text=f"Я думаю, что это: {np.argmax(ans)}")
    pass

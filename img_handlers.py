@@ -17,6 +17,7 @@ def toNumpy():
     #image.save("img_source.png")
     # resize to AI input layer
     image = image.resize((28, 28))
+    image = image.convert('L')
     #image.save("img_resized.png")
     img_arr = np.array(image)
     
