@@ -1,3 +1,6 @@
 from ui.ui import run
+from model import Model
 
-run()
+
+model = Model("model.keras")
+run(model=model)

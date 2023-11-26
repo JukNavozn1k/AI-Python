@@ -2,7 +2,7 @@ import tkinter as tk
 from . import ui_events
 import img_handlers
 
-def run():
+def run(model=None):
     root = tk.Tk()
     root.title("MNIST Recognizer 2.0.0!")
 
