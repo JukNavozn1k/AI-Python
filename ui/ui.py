@@ -25,7 +25,11 @@ def run(model=None):
 
 
     # AI Predictor ... 
-    predict_button = tk.Button(root, text="Predict", command=img_handlers.save_img)
+    predict_button = tk.Button(root, text="Predict", command=ui_events.predict)
     predict_button.pack()
+
+    
+    clear_button = tk.Button(root, text="Save img", command=img_handlers.save_img)
+    clear_button.pack()
 
     root.mainloop()

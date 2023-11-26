@@ -1,6 +1,6 @@
 
 import tkinter as tk
-
+import img_handlers
 
 canvas = None
 
@@ -19,3 +19,8 @@ def erase(event):
 
 def clear_canvas():
     canvas.delete("all")
+
+def predict():
+   arr = img_handlers.toNumpy()
+   print(arr)
+   pass
