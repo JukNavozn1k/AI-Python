@@ -18,7 +18,7 @@ def toNumpy():
     # resize to AI input layer
     image = image.resize((28, 28))
     #image.save("img_resized.png")
-    img_arr = np.array(image)[:, :, 0:1]
+    img_arr = np.array(image)
     
     return img_arr / 255
 

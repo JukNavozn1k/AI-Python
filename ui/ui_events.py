@@ -3,6 +3,8 @@ import tkinter as tk
 import img_handlers
 
 canvas = None
+model = None
+import numpy as np 
 
 # Функция для рисования 
 def paint(event):
@@ -21,6 +23,8 @@ def clear_canvas():
     canvas.delete("all")
 
 def predict():
-   arr = img_handlers.toNumpy()
-   print(arr)
+   arr = 1 -  img_handlers.toNumpy()[:, :, 0:1] 
+   ans = model.model.predict([arr.tolist()],verbose=False)
+   print(np.argmax(ans))
+   
    pass

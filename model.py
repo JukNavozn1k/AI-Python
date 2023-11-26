@@ -28,13 +28,13 @@ class Model:
 
         self.model.add(Flatten())
         self.model.add(Dense(units=64,activation="relu"))
-        self.model.add(Dense(units=32,activation="relu"))
+        self.model.add(Dense(units=64,activation="relu"))
         self.model.add(Dense(units=10,activation="softmax"))
 
         self.model.compile(optimizer=keras.optimizers.Adam(0.001),loss="sparse_categorical_crossentropy",metrics=['accuracy'])
 
         # Model training
-        history = self.model.fit(x_train,y_train,epochs=5,batch_size=32,verbose=True,validation_data=(x_test,y_test))
+        history = self.model.fit(x_train,y_train,epochs=10,batch_size=32,verbose=True,validation_data=(x_test,y_test))
         if stats: self.print_stats(history)
 
         # Saving model

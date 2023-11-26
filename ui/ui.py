@@ -14,7 +14,9 @@ def run(model=None):
     ui_events.canvas = canvas
     img_handlers.canvas = canvas
     img_handlers.root = root
+    ui_events.model = model
 
+    
     # Mouse binds
     canvas.bind("<B1-Motion>", ui_events.paint)
     canvas.bind("<B3-Motion>", ui_events.erase)
