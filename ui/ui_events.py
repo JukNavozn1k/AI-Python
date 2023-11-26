@@ -4,6 +4,9 @@ import img_handlers
 
 canvas = None
 model = None
+label = None 
+
+
 import numpy as np 
 
 # Функция для рисования 
@@ -25,6 +28,6 @@ def clear_canvas():
 def predict():
    arr = 1 -  img_handlers.toNumpy()[:, :, 0:1] 
    ans = model.model.predict([arr.tolist()],verbose=False)
-   print(np.argmax(ans))
-   
+   print()
+   label.config(text=f"Я думаю, что это: {np.argmax(ans)}")
    pass

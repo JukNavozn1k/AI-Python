@@ -8,14 +8,15 @@ def run(model=None):
 
     canvas = tk.Canvas(root, width=280, height=280, bg="white")
     canvas.pack()
-
+    label = tk.Label(root, text="Waiting...", font=("Arial", 12))
+    label.pack()
 
     # Modules init
     ui_events.canvas = canvas
     img_handlers.canvas = canvas
     img_handlers.root = root
     ui_events.model = model
-
+    ui_events.label = label
     
     # Mouse binds
     canvas.bind("<B1-Motion>", ui_events.paint)
