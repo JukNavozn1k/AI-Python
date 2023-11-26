@@ -1,6 +1,8 @@
 from ui.ui import run
 from model import Model
 
-
-model = Model("model.keras")
+try:
+    model = Model("model.keras")
+except: 
+    model = Model()
 run(model=model)
