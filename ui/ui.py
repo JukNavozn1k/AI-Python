@@ -1,0 +1,31 @@
+import tkinter as tk
+from . import ui_events
+import img_handlers
+
+def run():
+    root = tk.Tk()
+    root.title("MNIST Recognizer 2.0.0!")
+
+    canvas = tk.Canvas(root, width=280, height=280, bg="white")
+    canvas.pack()
+
+
+    # Modules init
+    ui_events.canvas = canvas
+    img_handlers.canvas = canvas
+    img_handlers.root = root
+
+    # Mouse binds
+    canvas.bind("<B1-Motion>", ui_events.paint)
+    canvas.bind("<B3-Motion>", ui_events.erase)
+
+    # Clear Canvas bind
+    clear_button = tk.Button(root, text="Clear Canvas", command=ui_events.clear_canvas)
+    clear_button.pack()
+
+
+    # AI Predictor ... 
+    predict_button = tk.Button(root, text="Predict", command=img_handlers.save_img)
+    predict_button.pack()
+
+    root.mainloop()
